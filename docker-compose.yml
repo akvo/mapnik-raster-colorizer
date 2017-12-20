@@ -1,0 +1,11 @@
+version: "3"
+services:
+  postgres:
+    build:
+      context: ./postgres
+    environment:
+      - POSTGRES_PASSWORD=sa
+    volumes:
+      - ./rasters:/rasters
+    ports:
+      - "5432:5432"
