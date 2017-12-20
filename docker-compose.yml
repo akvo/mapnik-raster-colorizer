@@ -9,3 +9,8 @@ services:
       - ./rasters:/rasters
     ports:
       - "5432:5432"
+  node:
+    build:
+      context: ./node
+    links:
+      - postgres:postgres
