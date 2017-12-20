@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Map srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext  +no_defs" background-color="white">
+  <Style name="style">
+    <Rule>
+      <RasterSymbolizer opacity="1" scaling="bilinear">
+	<RasterColorizer default-mode="linear" default-color="black" epsilon="0.5">
+          <stop color="yellow" value="0" />
+	  <stop color="green" value="240" />
+	</RasterColorizer>
+      </RasterSymbolizer>
+    </Rule>
+  </Style>
+
+
+  <Layer name="sierra_leone" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext  +no_defs">
+    <StyleName>style</StyleName>
+    <Datasource>
+      <Parameter name="type">pgraster</Parameter>
+      <Parameter name="host">postgres</Parameter>
+      <Parameter name="dbname">sierra_leone</Parameter>
+      <Parameter name="user">postgres</Parameter>
+      <Parameter name="password">sa</Parameter>
+      <Parameter name="table">sle_pop_wm</Parameter>
+      <Parameter name="raster_table">sle_pop_wm</Parameter>
+      <Parameter name="raster_field">rast</Parameter>
+      <Parameter name="estimate_extent">true</Parameter>
+      <Parameter name="band">1</Parameter>
+      <Parameter name="srid">3857</Parameter>
+    </Datasource>
+  </Layer>
+</Map>

@@ -9,6 +9,7 @@ Example of Mapnik raster colorizer
 ### Run test
 
     docker-compose run mapnik /usr/local/src/run.sh test.js
+    docker-compose run mapnik /usr/local/src/run.sh test2.js
 
 ## Raster dataset license
 
