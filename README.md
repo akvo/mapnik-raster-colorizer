@@ -6,6 +6,10 @@ Example of Mapnik raster colorizer
 
     docker-compose up --build -d
 
+### Run test
+
+    docker-compose run mapnik /usr/local/src/run.sh test.js
+
 ## Raster dataset license
 
 [WorldPop](http://www.worldpop.org.uk/data/summary/?doi=10.5258/SOTON/WP00234) datasets

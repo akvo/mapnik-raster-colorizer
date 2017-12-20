@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Map srs="+init=epsg:4326" background-color="white">
+  <Style name="style">
+    <Rule>
+      <RasterSymbolizer opacity="1" scaling="bilinear">
+	<RasterColorizer default-mode="linear" default-color="black" epsilon="0.5">
+          <stop color="yellow" value="0" />
+	  <stop color="green" value="240" />
+	</RasterColorizer>
+      </RasterSymbolizer>
+    </Rule>
+  </Style>
+
+
+  <Layer name="sierra_leone" srs="+init=epsg:4326">
+    <StyleName>style</StyleName>
+    <Datasource>
+      <Parameter name="type">pgraster</Parameter>
+      <Parameter name="host">postgres</Parameter>
+      <Parameter name="dbname">sierra_leone</Parameter>
+      <Parameter name="user">postgres</Parameter>      
+      <Parameter name="password">sa</Parameter>
+      <Parameter name="table">sle_pop</Parameter>
+      <Parameter name="raster_table">sle_pop</Parameter>
+      <Parameter name="raster_field">rast</Parameter>
+      <Parameter name="estimate_extent">true</Parameter>
+      <Parameter name="band">1</Parameter>
+      <Parameter name="srid">4326</Parameter>
+    </Datasource>
+  </Layer>
+</Map>

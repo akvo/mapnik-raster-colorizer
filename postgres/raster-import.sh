@@ -20,8 +20,8 @@ tar xvfz "${ARCHIVE}"
 
 raster2pgsql -C -I -Y "${GEOTIFF}" -t 128x128 sle_pop | psql -U postgres -h localhost -d "${DB_NAME}"
 
-# Reproject and compress
+# Reproject
 
-gdalwarp -ot Byte -co COMPRESS=LZW -t_srs EPSG:3857 "${GEOTIFF}" "sle-wm.tif"
+gdalwarp -t_srs EPSG:3857 "${GEOTIFF}" "sle-wm.tif"
 
 raster2pgsql -C -I -Y "sle-wm.tif" -t 128x128 sle_pop_wm | psql -U postgres -h localhost -d "${DB_NAME}"
