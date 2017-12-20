@@ -9,8 +9,8 @@ services:
       - ./rasters:/rasters
     ports:
       - "5432:5432"
-  node:
+  mapnik:
     build:
-      context: ./node
+      context: ./mapnik
     links:
       - postgres:postgres
